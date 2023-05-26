@@ -1,4 +1,5 @@
 const express = require('express');
+const {userRouter} = require('./src/routes')
 const app = express();
 
 // pars la données recu par l'api en json
@@ -10,6 +11,8 @@ APIRouter.get('/version', function(req,res){
     const { version } = require('./package.json');
     return res.json({ version })
 })
+
+APIRouter.use('/users', userRouter);
 
 app.use('/api', APIRouter);
 
