@@ -1,12 +1,8 @@
 require('dotenv').config();
 const mysql = require('mysql2/promise');
 
-const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = { 
-    DB_HOST: "localhost",
-    DB_USER: "fokko",
-    DB_PASSWORD: "fennec",
-    DB_NAME: "express_quests" 
-};
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env
+
 
 const db = mysql.createPool({
   host: DB_HOST,

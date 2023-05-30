@@ -1,5 +1,6 @@
 const express = require('express');
 const {userRouter} = require('./src/routes')
+const {movieRouter} = require('./src/routes')
 const app = express();
 
 // pars la données recu par l'api en json
@@ -13,6 +14,7 @@ APIRouter.get('/version', function(req,res){
 })
 
 APIRouter.use('/users', userRouter);
+APIRouter.use('/movies', movieRouter);
 
 app.use('/api', APIRouter);
 
