@@ -12,7 +12,7 @@ class UserController extends BaseController {
 
     getAll() {
         this.userModel.getAll()
-        .then((results)=> this.sendJson(results))
+        .then(([results])=> this.sendJson(results))
     }
 }
 
